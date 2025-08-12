@@ -85,5 +85,51 @@ fruit [1,2]
 fruit [1]
 fruit [1,]
 fruit [,2]
-py_install("numpy")
+
+# Select multiple elements
+x <- c(2.1, 4.2, 3.3, 5.4)
+x <- 1:10
+x[c(3,1,5)]
+
+# exclude elements
+x[-10]
+x[-c(2,4,6,8,10)]
+x[c(-1,-2)]
+
+#logical vectors
+x[c(TRUE, FALSE, FALSE, TRUE)]
+
+x[x > 3]
+
+x[0]
+
+#subsetting and assignment
+x <- 1:5
+x [c(1, 2)] <- 2:3
+x
+x [-1] <- 4:1
+x
+
+# subset rows in data frames based on conditions (logical subsettin)
+
+# subset rows in data frames
+mtcars[mtcars$gear == 5, ]
+
+mtcars [mtcars$gear == 5 & mtcars$cyl == 4,]
+
+# removing columns from data frames
+df <- data.frame(x = 1:3, y =3:1, z = letters(1:3))
+df <- data.frame(x = 1:3, 
+                 y = 3:1, 
+                 z = "a", "b", 
+                 "c")
+df$z <- NULL
+df[c("x", "y")]
+df <-df[c("x", "y")]
+setdiff(names(df), "z")
+df[setdiff(names(df), "z")]
+
+
+
+
 
